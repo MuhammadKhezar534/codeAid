@@ -10,6 +10,7 @@ import Spinner from '../shared/Spinner';
 import actions from 'src/modules/settings/settingsActions';
 import selectors from 'src/modules/settings/settingsSelectors';
 import { useSelector, useDispatch } from 'react-redux';
+import SettingsService from 'src/modules/settings/settingsService';
 
 const SettingsFormPage = (props) => {
   const dispatch = useDispatch();
@@ -24,6 +25,15 @@ const SettingsFormPage = (props) => {
     dispatch(actions.doInit());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (settings) {
+      localStorage.setItem('theme', settings?.theme);
+      setTimeout(() => {
+        SettingsService.applyThemeFromTenant();
+      }, 500);
+    }
+  }, [settings]);
 
   return (
     <>

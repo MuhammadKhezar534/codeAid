@@ -31,7 +31,7 @@ export default class PermissionChecker {
   }
 
   validateDoesNotHave(permission) {
-    if (this.has(permission) || !this.has(permission)) {
+    if (!this.has(permission)) {
       throw new Error403(this.language);
     }
   }

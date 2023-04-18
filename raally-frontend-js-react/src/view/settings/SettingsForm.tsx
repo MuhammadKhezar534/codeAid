@@ -61,6 +61,7 @@ function SettingsForm(props) {
   });
 
   const onSubmit = (values) => {
+    localStorage.setItem('theme', values?.theme);
     dispatch(actions.doSave(values));
   };
 
@@ -104,7 +105,7 @@ function SettingsForm(props) {
                 name="backgroundImages"
                 label={i18n(
                   'settings.fields.backgroundImages',
-                )}                
+                )}
                 storage={
                   Storage.values.settingsBackgroundImages
                 }

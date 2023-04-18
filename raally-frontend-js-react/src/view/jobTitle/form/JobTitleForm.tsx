@@ -15,20 +15,20 @@ const schema = yup.object().shape({
   person: yupFormSchemas.relationToOne(
     i18n('entities.jobTitle.fields.person'),
     {
-      "required": true
+      required: true,
     },
   ),
   title: yupFormSchemas.string(
     i18n('entities.jobTitle.fields.title'),
     {
-      "required": true,
-      "min": 3
+      required: true,
+      min: 3,
     },
   ),
   effectiveDate: yupFormSchemas.date(
     i18n('entities.jobTitle.fields.effectiveDate'),
     {
-      "required": true
+      required: true,
     },
   ),
 });
@@ -40,7 +40,12 @@ function JobTitleForm(props) {
     return {
       person: record.person,
       title: record.title,
-      effectiveDate: record.effectiveDate ? moment(record.effectiveDate, 'YYYY-MM-DD').toDate() : null,
+      effectiveDate: record.effectiveDate
+        ? moment(
+            record.effectiveDate,
+            'YYYY-MM-DD',
+          ).toDate()
+        : null,
     };
   });
 
@@ -66,9 +71,11 @@ function JobTitleForm(props) {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="row">
             <div className="col-lg-7 col-md-8 col-12">
-              <PersonAutocompleteFormItem  
+              <PersonAutocompleteFormItem
                 name="person"
-                label={i18n('entities.jobTitle.fields.person')}
+                label={i18n(
+                  'entities.jobTitle.fields.person',
+                )}
                 required={true}
                 showCreate={!props.modal}
               />
@@ -76,16 +83,22 @@ function JobTitleForm(props) {
             <div className="col-lg-7 col-md-8 col-12">
               <InputFormItem
                 name="title"
-                label={i18n('entities.jobTitle.fields.title')}
-              hint={i18n('entities.jobTitle.hints.title')}
+                label={i18n(
+                  'entities.jobTitle.fields.title',
+                )}
+                hint={i18n('entities.jobTitle.hints.title')}
                 required={true}
               />
             </div>
             <div className="col-lg-7 col-md-8 col-12">
               <DatePickerFormItem
                 name="effectiveDate"
-                label={i18n('entities.jobTitle.fields.effectiveDate')}
-              hint={i18n('entities.jobTitle.hints.effectiveDate')}
+                label={i18n(
+                  'entities.jobTitle.fields.effectiveDate',
+                )}
+                hint={i18n(
+                  'entities.jobTitle.hints.effectiveDate',
+                )}
                 required={true}
               />
             </div>
@@ -105,6 +118,15 @@ function JobTitleForm(props) {
               {i18n('common.save')}
             </button>
 
+            <button
+              className="btn btn-light"
+              type="button"
+              disabled={props.saveLoading}
+              onClick={onReset}
+            >
+              <i className="fas fa-undo"></i>{' '}
+              {i18n('common.reset')}
+            </button>
             {props.onCancel ? (
               <button
                 className="btn btn-light"
@@ -116,16 +138,6 @@ function JobTitleForm(props) {
                 {i18n('common.cancel')}
               </button>
             ) : null}
-
-            <button
-              className="btn btn-light"
-              type="button"
-              disabled={props.saveLoading}
-              onClick={onReset}
-            >
-              <i className="fas fa-undo"></i>{' '}
-              {i18n('common.reset')}
-            </button>
           </div>
         </form>
       </FormProvider>

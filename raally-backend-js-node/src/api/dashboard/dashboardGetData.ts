@@ -16,19 +16,29 @@ export default async (req, res, next) => {
       currentUsageDataByHours: {},
       currentUsageDataByPeople: {},
       currentIdlePeopleByRole: {},
-      numberOfPeople: {}
+      numberOfPeople: {},
     };
 
     let payloadValues;
 
-    await Promise.all([dashboardService.getUsageByHoursData(),
-                 dashboardService.getNumberOfPeoplePerRole(),
-                 dashboardService.getUsageByPeopleData(),
-                 dashboardService.getIdlenessPerRoleData()]).then((values) => {
-                  payloadValues = values;                  
-                 });
+    console.log({
+      roles:
+        await dashboardService.getNumberOfPeoplePerRole(),
+    });
 
-    payload = generatePayload(dashboardService.getGatheringTime(), payloadValues);
+    await Promise.all([
+      dashboardService.getUsageByHoursData(),
+      dashboardService.getNumberOfPeoplePerRole(),
+      dashboardService.getUsageByPeopleData(),
+      dashboardService.getIdlenessPerRoleData(),
+    ]).then((values) => {
+      payloadValues = values;
+    });
+
+    payload = generatePayload(
+      dashboardService.getGatheringTime(),
+      payloadValues,
+    );
 
     await ApiResponseHandler.success(req, res, payload);
   } catch (error) {
@@ -44,12 +54,14 @@ function generatePayload(elapsedTime, values) {
 
   const usageDataByHours = {
     elapsedTime: usageByHours.elapsedTime,
-    idle: usageByHours.totalAvailableHours - usageByHours.assignedHours,
-    busy: usageByHours.assignedHours 
+    idle:
+      usageByHours.totalAvailableHours -
+      usageByHours.assignedHours,
+    busy: usageByHours.assignedHours,
   };
 
   const usageDataByPeople = {
-    ...usageByPeople
+    ...usageByPeople,
   };
 
   const idlePeopleByRole = {
@@ -57,12 +69,13 @@ function generatePayload(elapsedTime, values) {
     projectManager: idlenessPerRole.projectManager.usage,
     technicalLead: idlenessPerRole.technicalLead.usage,
     seniorDeveloper: idlenessPerRole.seniorDeveloper.usage,
-    intermediateDeveloper: idlenessPerRole.intermediateDeveloper.usage,
-    juniorDeveloper: idlenessPerRole.juniorDeveloper.usage
+    intermediateDeveloper:
+      idlenessPerRole.intermediateDeveloper.usage,
+    juniorDeveloper: idlenessPerRole.juniorDeveloper.usage,
   };
 
   const numberOfPeople = {
-    ...countPerRole
+    ...countPerRole,
   };
 
   return {
@@ -70,6 +83,6 @@ function generatePayload(elapsedTime, values) {
     currentUsageDataByHours: usageDataByHours,
     currentUsageDataByPeople: usageDataByPeople,
     currentIdlePeopleByRole: idlePeopleByRole,
-    numberOfPeople: numberOfPeople
+    numberOfPeople: numberOfPeople,
   };
-} 
+}

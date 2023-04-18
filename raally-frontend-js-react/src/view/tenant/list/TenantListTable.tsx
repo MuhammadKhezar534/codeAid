@@ -23,10 +23,8 @@ import { tenantSubdomain } from 'src/modules/tenant/tenantSubdomain';
 function TenantListTable() {
   const dispatch = useDispatch();
 
-  const [
-    recordIdToDestroy,
-    setRecordIdToDestroy,
-  ] = useState(null);
+  const [recordIdToDestroy, setRecordIdToDestroy] =
+    useState(null);
 
   const [
     invitationTokenToDeclineInvitation,
@@ -99,7 +97,6 @@ function TenantListTable() {
   const doAcceptInvitation = (token) => {
     dispatch(invitationActions.doAccept(token));
   };
-
   return (
     <TableWrapper>
       <div className="table-responsive">

@@ -9,25 +9,21 @@ import { IRepositoryOptions } from './IRepositoryOptions';
 const Op = Sequelize.Op;
 
 class JobTitleRepository {
-
   static async create(data, options: IRepositoryOptions) {
-    const currentUser = SequelizeRepository.getCurrentUser(
-      options,
-    );
+    const currentUser =
+      SequelizeRepository.getCurrentUser(options);
 
-    const tenant = SequelizeRepository.getCurrentTenant(
-      options,
-    );
+    const tenant =
+      SequelizeRepository.getCurrentTenant(options);
 
-    const transaction = SequelizeRepository.getTransaction(
-      options,
-    );
+    const transaction =
+      SequelizeRepository.getTransaction(options);
 
     const record = await options.database.jobTitle.create(
       {
         ...lodash.pick(data, [
           'title',
-          'effectiveDate',          
+          'effectiveDate',
           'importHash',
         ]),
         personId: data.person || null,
@@ -40,10 +36,6 @@ class JobTitleRepository {
       },
     );
 
-    
-  
-
-  
     await this._createAuditLog(
       AuditLogRepository.CREATE,
       record,
@@ -54,29 +46,27 @@ class JobTitleRepository {
     return this.findById(record.id, options);
   }
 
-  static async update(id, data, options: IRepositoryOptions) {
-    const currentUser = SequelizeRepository.getCurrentUser(
-      options,
-    );
+  static async update(
+    id,
+    data,
+    options: IRepositoryOptions,
+  ) {
+    const currentUser =
+      SequelizeRepository.getCurrentUser(options);
 
-    const transaction = SequelizeRepository.getTransaction(
-      options,
-    );
+    const transaction =
+      SequelizeRepository.getTransaction(options);
 
+    const currentTenant =
+      SequelizeRepository.getCurrentTenant(options);
 
-    const currentTenant = SequelizeRepository.getCurrentTenant(
-      options,
-    );
-
-    let record = await options.database.jobTitle.findOne(      
-      {
-        where: {
-          id,
-          tenantId: currentTenant.id,
-        },
-        transaction,
+    let record = await options.database.jobTitle.findOne({
+      where: {
+        id,
+        tenantId: currentTenant.id,
       },
-    );
+      transaction,
+    });
 
     if (!record) {
       throw new Error404();
@@ -86,7 +76,7 @@ class JobTitleRepository {
       {
         ...lodash.pick(data, [
           'title',
-          'effectiveDate',          
+          'effectiveDate',
           'importHash',
         ]),
         personId: data.person || null,
@@ -96,10 +86,6 @@ class JobTitleRepository {
         transaction,
       },
     );
-
-
-
-
 
     await this._createAuditLog(
       AuditLogRepository.UPDATE,
@@ -112,23 +98,19 @@ class JobTitleRepository {
   }
 
   static async destroy(id, options: IRepositoryOptions) {
-    const transaction = SequelizeRepository.getTransaction(
-      options,
-    );
+    const transaction =
+      SequelizeRepository.getTransaction(options);
 
-    const currentTenant = SequelizeRepository.getCurrentTenant(
-      options,
-    );
+    const currentTenant =
+      SequelizeRepository.getCurrentTenant(options);
 
-    let record = await options.database.jobTitle.findOne(
-      {
-        where: {
-          id,
-          tenantId: currentTenant.id,
-        },
-        transaction,
+    let record = await options.database.jobTitle.findOne({
+      where: {
+        id,
+        tenantId: currentTenant.id,
       },
-    );
+      transaction,
+    });
 
     if (!record) {
       throw new Error404();
@@ -147,9 +129,8 @@ class JobTitleRepository {
   }
 
   static async findById(id, options: IRepositoryOptions) {
-    const transaction = SequelizeRepository.getTransaction(
-      options,
-    );
+    const transaction =
+      SequelizeRepository.getTransaction(options);
 
     const include = [
       {
@@ -158,20 +139,17 @@ class JobTitleRepository {
       },
     ];
 
-    const currentTenant = SequelizeRepository.getCurrentTenant(
-      options,
-    );
+    const currentTenant =
+      SequelizeRepository.getCurrentTenant(options);
 
-    const record = await options.database.jobTitle.findOne(
-      {
-        where: {
-          id,
-          tenantId: currentTenant.id,
-        },
-        include,
-        transaction,
+    const record = await options.database.jobTitle.findOne({
+      where: {
+        id,
+        tenantId: currentTenant.id,
       },
-    );
+      include,
+      transaction,
+    });
 
     if (!record) {
       throw new Error404();
@@ -220,39 +198,34 @@ class JobTitleRepository {
   }
 
   static async count(filter, options: IRepositoryOptions) {
-    const transaction = SequelizeRepository.getTransaction(
-      options,
-    );
+    const transaction =
+      SequelizeRepository.getTransaction(options);
 
-    const tenant = SequelizeRepository.getCurrentTenant(
-      options,
-    );
+    const tenant =
+      SequelizeRepository.getCurrentTenant(options);
 
-    return options.database.jobTitle.count(
-      {
-        where: {
-          ...filter,
-          tenantId: tenant.id,
-        },
-        transaction,
+    return options.database.jobTitle.count({
+      where: {
+        ...filter,
+        tenantId: tenant.id,
       },
-    );
+      transaction,
+    });
   }
 
   static async findAndCountAll(
     { filter, limit = 0, offset = 0, orderBy = '' },
     options: IRepositoryOptions,
   ) {
-    const tenant = SequelizeRepository.getCurrentTenant(
-      options,
-    );
+    const tenant =
+      SequelizeRepository.getCurrentTenant(options);
 
     let whereAnd: Array<any> = [];
     let include = [
       {
         model: options.database.person,
         as: 'person',
-      },      
+      },
     ];
 
     whereAnd.push({
@@ -287,7 +260,11 @@ class JobTitleRepository {
       if (filter.effectiveDateRange) {
         const [start, end] = filter.effectiveDateRange;
 
-        if (start !== undefined && start !== null && start !== '') {
+        if (
+          start !== undefined &&
+          start !== null &&
+          start !== ''
+        ) {
           whereAnd.push({
             effectiveDate: {
               [Op.gte]: start,
@@ -295,7 +272,11 @@ class JobTitleRepository {
           });
         }
 
-        if (end !== undefined && end !== null && end !== '') {
+        if (
+          end !== undefined &&
+          end !== null &&
+          end !== ''
+        ) {
           whereAnd.push({
             effectiveDate: {
               [Op.lte]: end,
@@ -335,21 +316,18 @@ class JobTitleRepository {
 
     const where = { [Op.and]: whereAnd };
 
-    let {
-      rows,
-      count,
-    } = await options.database.jobTitle.findAndCountAll({
-      where,
-      include,
-      limit: limit ? Number(limit) : undefined,
-      offset: offset ? Number(offset) : undefined,
-      order: orderBy
-        ? [orderBy.split('_')]
-        : [['createdAt', 'DESC']],
-      transaction: SequelizeRepository.getTransaction(
-        options,
-      ),
-    });
+    let { rows, count } =
+      await options.database.jobTitle.findAndCountAll({
+        where,
+        include,
+        limit: limit ? Number(limit) : undefined,
+        offset: offset ? Number(offset) : undefined,
+        order: orderBy
+          ? [orderBy.split('_')]
+          : [['createdAt', 'DESC']],
+        transaction:
+          SequelizeRepository.getTransaction(options),
+      });
 
     rows = await this._fillWithRelationsAndFilesForRows(
       rows,
@@ -359,20 +337,24 @@ class JobTitleRepository {
     return { rows, count };
   }
 
-  static async findAllAutocomplete(query, limit, options: IRepositoryOptions) {
-    const tenant = SequelizeRepository.getCurrentTenant(
-      options,
-    );
+  static async findAllAutocomplete(
+    query,
+    limit,
+    options: IRepositoryOptions,
+  ) {
+    const tenant =
+      SequelizeRepository.getCurrentTenant(options);
 
-    let whereAnd: Array<any> = [{
-      tenantId: tenant.id,
-    }];
+    let whereAnd: Array<any> = [
+      {
+        tenantId: tenant.id,
+      },
+    ];
 
     if (query) {
       whereAnd.push({
         [Op.or]: [
           { ['id']: SequelizeFilterUtils.uuid(query) },
-
         ],
       });
     }
@@ -405,7 +387,6 @@ class JobTitleRepository {
     if (data) {
       values = {
         ...record.get({ plain: true }),
-
       };
     }
 
@@ -435,18 +416,18 @@ class JobTitleRepository {
     );
   }
 
-  static async _fillWithRelationsAndFiles(record, options: IRepositoryOptions) {
+  static async _fillWithRelationsAndFiles(
+    record,
+    options: IRepositoryOptions,
+  ) {
     if (!record) {
       return record;
     }
 
     const output = record.get({ plain: true });
 
-    const transaction = SequelizeRepository.getTransaction(
-      options,
-    );
-
-
+    const transaction =
+      SequelizeRepository.getTransaction(options);
 
     return output;
   }

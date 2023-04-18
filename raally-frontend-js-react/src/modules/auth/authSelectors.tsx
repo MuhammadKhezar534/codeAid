@@ -3,7 +3,9 @@ import AuthCurrentTenant from './authCurrentTenant';
 import { tenantSubdomain } from '../tenant/tenantSubdomain';
 import _get from 'lodash/get';
 
-const selectRaw = (state) => state.auth;
+const selectRaw = (state) => {
+  return state.auth;
+};
 
 const selectAuthenticationUser = createSelector(
   [selectRaw],

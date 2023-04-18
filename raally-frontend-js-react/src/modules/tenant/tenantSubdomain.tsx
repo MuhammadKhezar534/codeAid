@@ -1,6 +1,5 @@
 import config from 'src/config';
 import { AuthToken } from '../auth/authToken';
-
 export const tenantSubdomain = {
   get isEnabled() {
     return config.tenantMode === 'multi-with-subdomain';
@@ -25,9 +24,8 @@ export const tenantSubdomain = {
     const hostSplitted = window.location.host.split('.');
 
     const currentHostDotsCount = hostSplitted.length;
-    const domainDotsCount = config.frontendUrl.host.split(
-      '.',
-    ).length;
+    const domainDotsCount =
+      config.frontendUrl.host.split('.').length;
 
     // The URL with subdomain must have at least one more dot then
     // the url without the subdomain

@@ -31,7 +31,7 @@ export default [
     path: '/audit-logs',
     icon: 'fas fa-history',
     label: i18n('auditLog.menu'),
-    permissionRequired: null,
+    permissionRequired: permissions.userRead,
   },
 
   {
@@ -74,5 +74,5 @@ export default [
     permissionRequired: permissions.assignmentRead,
     icon: 'fas fa-chevron-right',
     label: i18n('entities.assignment.menu'),
-  },  
+  },
 ].filter(Boolean);

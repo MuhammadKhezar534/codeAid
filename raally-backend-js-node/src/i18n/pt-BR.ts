@@ -71,7 +71,8 @@ const ptBR = {
       message: 'Não permitido',
     },
     validation: {
-      message: 'Ocorreu um erro',
+      message:
+        'Desculpe, não reconhecemos suas credenciais',
     },
   },
 
@@ -87,41 +88,35 @@ const ptBR = {
   entities: {
     compensation: {
       errors: {
-        unique: {
-
-        }
-      }
+        unique: {},
+      },
     },
     person: {
       errors: {
         unique: {
           fullName: 'Full Name deve ser único',
-        }
-      }
+        },
+      },
     },
     jobTitle: {
       errors: {
-        unique: {
-
-        }
-      }
+        unique: {},
+      },
     },
     project: {
       errors: {
         unique: {
           projectId: 'Project ID deve ser único',
           name: 'Name deve ser único',
-        }
-      }
+        },
+      },
     },
     assignment: {
       errors: {
-        unique: {
-
-        }
-      }
+        unique: {},
+      },
     },
-  }
+  },
 };
 
 export default ptBR;

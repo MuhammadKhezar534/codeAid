@@ -11,10 +11,8 @@ import Toolbar from 'src/view/shared/styles/Toolbar';
 import ButtonIcon from 'src/view/shared/ButtonIcon';
 
 function PersonViewToolbar(props) {
-  const [
-    destroyConfirmVisible,
-    setDestroyConfirmVisible,
-  ] = useState(false);
+  const [destroyConfirmVisible, setDestroyConfirmVisible] =
+    useState(false);
 
   const dispatch = useDispatch();
 

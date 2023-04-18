@@ -34,335 +34,335 @@ const es = {
   },
   entities: {
     compensation: {
-        name: 'compensation',
-        label: 'Compensaciones',
+      name: 'compensation',
+      label: 'Compensaciones',
+      menu: 'Compensaciones',
+      exporterFileName: 'exportacion_compensacions',
+      list: {
         menu: 'Compensaciones',
-        exporterFileName: 'exportacion_compensacions',
-        list: {
-          menu: 'Compensaciones',
-          title: 'Compensaciones',
-        },
-        create: {
-          success: 'Compensación guardada con éxito',
-        },
-        update: {
-          success: 'Compensación guardada con éxito',
-        },
-        destroy: {
-          success: 'Compensación eliminada con éxito',
-        },
-        destroyAll: {
-          success: 'Compensación(es) eliminada(s) con éxito',
-        },
-        edit: {
-          title: 'Editar Compensación',
-        },
-        fields: {
-          id: 'Id',
-          'person': 'Persona',
-          'type': 'Tipo',
-          'workAvailabilityRange': 'Disponibilidad de trabajo',
-          'workAvailability': 'Disponibilidad de trabajo',
-          'monetaryRange': 'Monetaria',
-          'monetary': 'Monetaria',
-          'paidTimeOffRange': 'Tiempo libre pagado',
-          'paidTimeOff': 'Tiempo libre pagado',
-          'otherBenefits': 'Otros beneficios',
-          'effectiveDateRange': 'Fecha',
-          'effectiveDate': 'Fecha de inicio',
-          createdAt: 'Creado el',
-          updatedAt: 'Actualizado el',
-          createdAtRange: 'Creado el',
-        },
-        enumerators: {
-          'type': {
-            'hourly': 'Cada hora',
-            'salaried': 'Asalariado',
-          },
-        },
-        placeholders: {
-          'type': 'Cada hora/Asalariado',
-          'workAvailability': '40',
-          'monetary': '00.00',
-          'paidTimeOff': '0',
-        },
-        hints: {
-          'type': 'Tipo de compensación (por hora o asalariado)',
-          'workAvailability': 'Cuánta disponibilidad cubre esta compensación en horas por semana.',
-          'monetary': 'Compensación monetaria de la persona',
-          'paidTimeOff': 'La cantidad de tiempo libre pagado que es parte de la compensación',
-          'otherBenefits': '¿Qué otros beneficios cubre la compensación?',
-          'effectiveDate': 'El día en que comienza a ser efectiva la compensación',
-        },
-        new: {
-          title: 'Nueva Compensación',
-        },
-        view: {
-          title: 'Ver Compensación',
-        },
-        importer: {
-          title: 'Importar Compensación',
-          fileName: 'compensation_import_template',
-          hint:
-            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        title: 'Compensaciones',
+      },
+      create: {
+        success: 'Compensación guardada con éxito',
+      },
+      update: {
+        success: 'Compensación guardada con éxito',
+      },
+      destroy: {
+        success: 'Compensación eliminada con éxito',
+      },
+      destroyAll: {
+        success: 'Compensación(es) eliminada(s) con éxito',
+      },
+      edit: {
+        title: 'Editar Compensación',
+      },
+      fields: {
+        id: 'Id',
+        person: 'Persona',
+        type: 'Tipo',
+        workAvailabilityRange: 'Disponibilidad de trabajo',
+        workAvailability: 'Disponibilidad de trabajo',
+        monetaryRange: 'Monetaria',
+        monetary: 'Monetaria',
+        paidTimeOffRange: 'Tiempo libre pagado',
+        paidTimeOff: 'Tiempo libre pagado',
+        otherBenefits: 'Otros beneficios',
+        effectiveDateRange: 'Fecha',
+        effectiveDate: 'Fecha de inicio',
+        createdAt: 'Creado el',
+        updatedAt: 'Actualizado el',
+        createdAtRange: 'Creado el',
+      },
+      enumerators: {
+        type: {
+          hourly: 'Cada hora',
+          salaried: 'Asalariado',
         },
       },
+      placeholders: {
+        type: 'Cada hora/Asalariado',
+        workAvailability: '40',
+        monetary: '00.00',
+        paidTimeOff: '0',
+      },
+      hints: {
+        type: 'Tipo de compensación (por hora o asalariado)',
+        workAvailability:
+          'Cuánta disponibilidad cubre esta compensación en horas por semana.',
+        monetary: 'Compensación monetaria de la persona',
+        paidTimeOff:
+          'La cantidad de tiempo libre pagado que es parte de la compensación',
+        otherBenefits:
+          '¿Qué otros beneficios cubre la compensación?',
+        effectiveDate:
+          'El día en que comienza a ser efectiva la compensación',
+      },
+      new: {
+        title: 'Nueva Compensación',
+      },
+      view: {
+        title: 'Ver Compensación',
+      },
+      importer: {
+        title: 'Importar Compensación',
+        fileName: 'compensation_import_template',
+        hint: 'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+      },
+    },
 
     person: {
-        name: 'person',
-        label: 'Personas',
+      name: 'person',
+      label: 'Personas',
+      menu: 'Personas',
+      exporterFileName: 'exportacion_persona',
+      list: {
         menu: 'Personas',
-        exporterFileName: 'exportacion_persona',
-        list: {
-          menu: 'Personas',
-          title: 'Personas',
-        },
-        create: {
-          success: 'Persona guardada con éxito',
-        },
-        update: {
-          success: 'Persona guardada con éxito',
-        },
-        destroy: {
-          success: 'Persona eliminada con éxito',
-        },
-        destroyAll: {
-          success: 'Persona(s) eliminada(s) con éxito',
-        },
-        edit: {
-          title: 'Editar Persona',
-        },
-        fields: {
-          id: 'Id',
-          'fullName': 'Nombre completo',
-          createdAt: 'Creado el',
-          updatedAt: 'Actualizado el',
-          createdAtRange: 'Creado el',
-        },
-        enumerators: {
-
-        },
-        placeholders: {
-          'fullName': 'Nombre completo...',
-        },
-        hints: {
-          'fullName': 'Nombre completo de la persona.',
-        },
-        new: {
-          title: 'Nueva Persona',
-        },
-        view: {
-          title: 'Ver Persona',
-        },
-        importer: {
-          title: 'Importar Personas',
-          fileName: 'persona_import_template',
-          hint:
-            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
-        },
+        title: 'Personas',
       },
+      create: {
+        success: 'Persona guardada con éxito',
+      },
+      update: {
+        success: 'Persona guardada con éxito',
+      },
+      destroy: {
+        success: 'Persona eliminada con éxito',
+      },
+      destroyAll: {
+        success: 'Persona(s) eliminada(s) con éxito',
+      },
+      edit: {
+        title: 'Editar Persona',
+      },
+      fields: {
+        id: 'Id',
+        fullName: 'Nombre completo',
+        createdAt: 'Creado el',
+        updatedAt: 'Actualizado el',
+        createdAtRange: 'Creado el',
+      },
+      enumerators: {},
+      placeholders: {
+        fullName: 'Nombre completo...',
+      },
+      hints: {
+        fullName: 'Nombre completo de la persona.',
+      },
+      new: {
+        title: 'Nueva Persona',
+      },
+      view: {
+        title: 'Ver Persona',
+      },
+      importer: {
+        title: 'Importar Personas',
+        fileName: 'persona_import_template',
+        hint: 'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+      },
+    },
 
     jobTitle: {
-        name: 'jobTitle',
-        label: 'Títulos de trabajos',
+      name: 'jobTitle',
+      label: 'Títulos de trabajos',
+      menu: 'Títulos de trabajos',
+      exporterFileName: 'exportacion_titulo_de_trabajos',
+      list: {
         menu: 'Títulos de trabajos',
-        exporterFileName: 'exportacion_titulo_de_trabajos',
-        list: {
-          menu: 'Títulos de trabajos',
-          title: 'Títulos de trabajos',
-        },
-        create: {
-          success: 'Títulos de trabajo guardado con éxito',
-        },
-        update: {
-          success: 'Títulos de trabajo guardado con éxito',
-        },
-        destroy: {
-          success: 'Títulos de trabajo eliminado con éxito',
-        },
-        destroyAll: {
-          success: 'Títulos de trabajo(s) eliminado(s) con éxito',
-        },
-        edit: {
-          title: 'Editar Títulos de trabajo',
-        },
-        fields: {
-          id: 'Id',
-          'person': 'Persona',
-          'title': 'Título',
-          'effectiveDateRange': 'Fecha efectiva',
-          'effectiveDate': 'Fecha efectiva',
-          createdAt: 'Creado el',
-          updatedAt: 'Actualizado el',
-          createdAtRange: 'Creado el',
-        },
-        enumerators: {
-
-        },
-        placeholders: {
-
-        },
-        hints: {
-          'title': 'Título del trabajo de una persona',
-          'effectiveDate': 'La fecha en que el título se vuelve activo.',
-        },
-        new: {
-          title: 'Nuevo Título de trabajo',
-        },
-        view: {
-          title: 'Ver Título de trabajo',
-        },
-        importer: {
-          title: 'Importar Títulos de trabajos',
-          fileName: 'titulo_de_trabajo_import_template',
-          hint:
-            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
-        },
+        title: 'Títulos de trabajos',
       },
+      create: {
+        success: 'Títulos de trabajo guardado con éxito',
+      },
+      update: {
+        success: 'Títulos de trabajo guardado con éxito',
+      },
+      destroy: {
+        success: 'Títulos de trabajo eliminado con éxito',
+      },
+      destroyAll: {
+        success:
+          'Títulos de trabajo(s) eliminado(s) con éxito',
+      },
+      edit: {
+        title: 'Editar Títulos de trabajo',
+      },
+      fields: {
+        id: 'Id',
+        person: 'Persona',
+        title: 'Título',
+        effectiveDateRange: 'Fecha efectiva',
+        effectiveDate: 'Fecha efectiva',
+        createdAt: 'Creado el',
+        updatedAt: 'Actualizado el',
+        createdAtRange: 'Creado el',
+      },
+      enumerators: {},
+      placeholders: {},
+      hints: {
+        title: 'Título del trabajo de una persona',
+        effectiveDate:
+          'La fecha en que el título se vuelve activo.',
+      },
+      new: {
+        title: 'Nuevo Título de trabajo',
+      },
+      view: {
+        title: 'Ver Título de trabajo',
+      },
+      importer: {
+        title: 'Importar Títulos de trabajos',
+        fileName: 'titulo_de_trabajo_import_template',
+        hint: 'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+      },
+    },
 
     project: {
-        name: 'project',
-        label: 'Proyectos',
+      name: 'project',
+      label: 'Proyectos',
+      menu: 'Proyectos',
+      exporterFileName: 'exportacion_proyectos',
+      list: {
         menu: 'Proyectos',
-        exporterFileName: 'exportacion_proyectos',
-        list: {
-          menu: 'Proyectos',
-          title: 'Proyectos',
-        },
-        create: {
-          success: 'Proyecto guardado con éxito',
-        },
-        update: {
-          success: 'Proyecto guardado con éxito',
-        },
-        destroy: {
-          success: 'Proyecto eliminado con éxito',
-        },
-        destroyAll: {
-          success: 'Proyecto(s) eliminado(s) con éxito',
-        },
-        edit: {
-          title: 'Editar Proyecto',
-        },
-        fields: {
-          id: 'Id',
-          'projectId': 'Proyecto ID',
-          'name': 'Nombre',
-          'type': 'Tipo',
-          'teamMembers': 'Miembros del equipo',
-          createdAt: 'Creado el',
-          updatedAt: 'Actualizado el',
-          createdAtRange: 'Creado el',
-        },
-        enumerators: {
-          'type': {
-            'managed-project': 'Managed-project',
-            'non-managed-project': 'Non-managed-project',
-            'team-augmentation': 'Team-augmentation',
-          },
-        },
-        placeholders: {
-          'projectId': 'Proyecto Internal ID',
-          'name': 'Nombre del proyecto',
-          'type': 'Tipo de proyecto',
-        },
-        hints: {
-          'projectId': 'El ID interno de la empresa del proyecto.',
-          'name': 'El nombre del proyecto.',
-          'type': 'El tipo de poyecto.',
-        },
-        new: {
-          title: 'Nuevo Proyecto',
-        },
-        view: {
-          title: 'Ver Proyecto',
-        },
-        importer: {
-          title: 'Importar Proyectos',
-          fileName: 'project_import_template',
-          hint:
-            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        title: 'Proyectos',
+      },
+      create: {
+        success: 'Proyecto guardado con éxito',
+      },
+      update: {
+        success: 'Proyecto guardado con éxito',
+      },
+      destroy: {
+        success: 'Proyecto eliminado con éxito',
+      },
+      destroyAll: {
+        success: 'Proyecto(s) eliminado(s) con éxito',
+      },
+      edit: {
+        title: 'Editar Proyecto',
+      },
+      fields: {
+        id: 'Id',
+        projectId: 'Proyecto ID',
+        name: 'Nombre',
+        type: 'Tipo',
+        teamMembers: 'Miembros del equipo',
+        createdAt: 'Creado el',
+        updatedAt: 'Actualizado el',
+        createdAtRange: 'Creado el',
+      },
+      enumerators: {
+        type: {
+          'managed-project': 'Managed-project',
+          'non-managed-project': 'Non-managed-project',
+          'team-augmentation': 'Team-augmentation',
         },
       },
+      placeholders: {
+        projectId: 'Proyecto Internal ID',
+        name: 'Nombre del proyecto',
+        type: 'Tipo de proyecto',
+      },
+      hints: {
+        projectId:
+          'El ID interno de la empresa del proyecto.',
+        name: 'El nombre del proyecto.',
+        type: 'El tipo de proyecto.',
+      },
+      new: {
+        title: 'Nuevo Proyecto',
+      },
+      view: {
+        title: 'Ver Proyecto',
+      },
+      importer: {
+        title: 'Importar Proyectos',
+        fileName: 'project_import_template',
+        hint: 'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+      },
+    },
 
     assignment: {
-        name: 'assignment',
-        label: 'Asignacións',
+      name: 'assignment',
+      label: 'Asignacións',
+      menu: 'Asignacións',
+      exporterFileName: 'exportacion_asignacion',
+      list: {
         menu: 'Asignacións',
-        exporterFileName: 'exportacion_asignacion',
-        list: {
-          menu: 'Asignacións',
-          title: 'Asignacións',
-        },
-        create: {
-          success: 'Asignación guardada con éxito',
-        },
-        update: {
-          success: 'Asignación guardada con éxito',
-        },
-        destroy: {
-          success: 'Asignación eliminada con éxito',
-        },
-        destroyAll: {
-          success: 'Asignación(s) eliminada con éxito',
-        },
-        edit: {
-          title: 'Editar Asignación',
-        },
-        fields: {
-          id: 'Id',
-          'person': 'Persona',
-          'project': 'Proyecto',
-          'hoursPerWeekRange': 'Horas por semana',
-          'hoursPerWeek': 'Horas por semana',
-          'startDateRange': 'Fecha de inicio',
-          'startDate': 'Fecha de inicio',
-          'endDateRange': 'Fecha final',
-          'endDate': 'Fecha final',
-          'role': 'Papel',
-          'notes': 'Notas',
-          createdAt: 'Creado el',
-          updatedAt: 'Actualizado el',
-          createdAtRange: 'Creado el',
-        },
-        enumerators: {
-          'role': {
-            'project-manager': 'Project-manager',
-            'technical-team-lead': 'Technical-team-lead',
-            'lead-developer': 'Lead-developer',
-            'developer': 'Developer',
-            'qa': 'Qa',
-            'designer': 'Designer',
-          },
-        },
-        placeholders: {
-          'person': 'Persona a asignar...',
-          'project': 'Proyecto ID',
-          'hoursPerWeek': 'Horas por semana',
-          'notes': 'Notas adicionales...',
-        },
-        hints: {
-          'person': 'Elija una persona para crear una nueva asignación.',
-          'project': 'Proyecto a asignar.',
-          'hoursPerWeek': '¿Para cuántas horas a la semana es esta tarea?',
-          'startDate': 'La fecha efectiva de inicio de la asignación.',
-          'endDate': 'La fecha en que finalizó la asignación.',
-          'role': 'Cuál es el rol de la persona que se le asigna.',
-          'notes': 'Cualquier nota que valga la pena mencionar con respecto a esta tarea.',
-        },
-        new: {
-          title: 'Nueva Asignación',
-        },
-        view: {
-          title: 'Ver Asignación',
-        },
-        importer: {
-          title: 'Importar Asignacións',
-          fileName: 'asignacions_import_template',
-          hint:
-            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        title: 'Asignacións',
+      },
+      create: {
+        success: 'Asignación guardada con éxito',
+      },
+      update: {
+        success: 'Asignación guardada con éxito',
+      },
+      destroy: {
+        success: 'Asignación eliminada con éxito',
+      },
+      destroyAll: {
+        success: 'Asignación(s) eliminada con éxito',
+      },
+      edit: {
+        title: 'Editar Asignación',
+      },
+      fields: {
+        id: 'Id',
+        person: 'Persona',
+        project: 'Proyecto',
+        hoursPerWeekRange: 'Horas por semana',
+        hoursPerWeek: 'Horas por semana',
+        startDateRange: 'Fecha de inicio',
+        startDate: 'Fecha de inicio',
+        endDateRange: 'Fecha final',
+        endDate: 'Fecha final',
+        role: 'Papel',
+        notes: 'Notas',
+        createdAt: 'Creado el',
+        updatedAt: 'Actualizado el',
+        createdAtRange: 'Creado el',
+      },
+      enumerators: {
+        role: {
+          'project-manager': 'Project-manager',
+          'technical-team-lead': 'Technical-team-lead',
+          'lead-developer': 'Lead-developer',
+          developer: 'Developer',
+          qa: 'Qa',
+          designer: 'Designer',
         },
       },
+      placeholders: {
+        person: 'Persona a asignar...',
+        project: 'Proyecto ID',
+        hoursPerWeek: 'Horas por semana',
+        notes: 'Notas adicionales...',
+      },
+      hints: {
+        person:
+          'Elija una persona para crear una nueva asignación.',
+        project: 'Proyecto a asignar.',
+        hoursPerWeek:
+          '¿Para cuántas horas a la semana es esta tarea?',
+        startDate:
+          'La fecha efectiva de inicio de la asignación.',
+        endDate: 'La fecha en que finalizó la asignación.',
+        role: 'Cuál es el rol de la persona que se le asigna.',
+        notes:
+          'Cualquier nota que valga la pena mencionar con respecto a esta tarea.',
+      },
+      new: {
+        title: 'Nueva Asignación',
+      },
+      view: {
+        title: 'Ver Asignación',
+      },
+      importer: {
+        title: 'Importar Asignacións',
+        fileName: 'asignacions_import_template',
+        hint: 'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+      },
+    },
   },
   auth: {
     tenants: 'Espacios de trabajo',
@@ -473,8 +473,7 @@ const es = {
     },
     select: 'Seleccionar espacio de trabajo',
     validation: {
-      url:
-        'La URL de su espacio de trabajo solo puede contener letras minúsculas, números y guiones (y debe comenzar con una letra o número).',
+      url: 'La URL de su espacio de trabajo solo puede contener letras minúsculas, números y guiones (y debe comenzar con una letra o número).',
     },
   },
   roles: {
@@ -556,8 +555,7 @@ const es = {
     importer: {
       title: 'Importar Usuarios',
       fileName: 'users_import_template',
-      hint:
-        'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio. Las relaciones deben ser la ID de los registros referenciados separados por espacio. Los Papels deben ser los identificadores de Papels separados por espacio.',
+      hint: 'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio. Las relaciones deben ser la ID de los registros referenciados separados por espacio. Los Papels deben ser los identificadores de Papels separados por espacio.',
     },
     errors: {
       userAlreadyExists:
@@ -623,6 +621,7 @@ const es = {
     },
     fields: {
       theme: 'Tema',
+      backgroundImages: 'Imagen de Fondo',
     },
     colors: {
       default: 'Dark',
@@ -717,8 +716,7 @@ const es = {
       length:
         '${path} debe tener exactamente ${length} caracteres',
       min: '${path} debe tener al menos ${min} caracteres',
-      max:
-        '${path} debe tener como máximo ${max} caracteres',
+      max: '${path} debe tener como máximo ${max} caracteres',
       matches:
         '${path} debe coincidir con lo siguiente: "${regex}"',
       email:
@@ -751,10 +749,8 @@ const es = {
         'El campo ${path} no puede tener claves no especificadas en la forma del objeto',
     },
     array: {
-      min:
-        'El campo ${path} debe tener al menos ${min} elementos',
-      max:
-        'El campo ${path} debe tener elementos menores o iguales a ${max}',
+      min: 'El campo ${path} debe tener al menos ${min} elementos',
+      max: 'El campo ${path} debe tener elementos menores o iguales a ${max}',
     },
   },
 
@@ -762,8 +758,7 @@ const es = {
   fileUploader: {
     upload: 'Subir',
     image: 'Debes subir una imagen',
-    size:
-      'El archivo es muy grande. El tamaño máximo permitido es {0}',
+    size: 'El archivo es muy grande. El tamaño máximo permitido es {0}',
     formats: 'Formato inválido. Debe ser uno de: {0}.',
   },
   importer: {
@@ -786,8 +781,7 @@ const es = {
     },
     form: {
       downloadTemplate: 'Descargar la plantilla',
-      hint:
-        'Haga clic o arrastre el archivo a esta área para continuar.',
+      hint: 'Haga clic o arrastre el archivo a esta área para continuar.',
     },
     list: {
       discardConfirm:

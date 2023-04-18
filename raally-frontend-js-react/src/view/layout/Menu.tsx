@@ -94,7 +94,7 @@ function Menu(props) {
               width="164px"
               alt={i18n('app.title')}
               style={{ verticalAlign: 'middle' }}
-            />            
+            />
           </Link>
         </div>
 

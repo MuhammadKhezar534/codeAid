@@ -31,14 +31,15 @@ export default class TenantService {
     });
 
     if (tenant) {
-      const tenantUser = await TenantUserRepository.findByTenantAndUser(
-        tenant.id,
-        this.options.currentUser.id,
-        {
-          ...this.options,
-          transaction,
-        },
-      );
+      const tenantUser =
+        await TenantUserRepository.findByTenantAndUser(
+          tenant.id,
+          this.options.currentUser.id,
+          {
+            ...this.options,
+            transaction,
+          },
+        );
 
       // In this situation, the user has used the invitation token
       // and it is already part of the tenant
@@ -91,14 +92,15 @@ export default class TenantService {
       },
     );
 
-    const tenantUser = await TenantUserRepository.findByTenantAndUser(
-      tenant.id,
-      this.options.currentUser.id,
-      {
-        ...this.options,
-        transaction,
-      },
-    );
+    const tenantUser =
+      await TenantUserRepository.findByTenantAndUser(
+        tenant.id,
+        this.options.currentUser.id,
+        {
+          ...this.options,
+          transaction,
+        },
+      );
 
     if (tenantUser) {
       // If found the invited tenant user via email
@@ -138,14 +140,15 @@ export default class TenantService {
       return;
     }
 
-    const tenantUser = await TenantUserRepository.findByTenantAndUser(
-      tenant.id,
-      this.options.currentUser.id,
-      {
-        ...this.options,
-        transaction,
-      },
-    );
+    const tenantUser =
+      await TenantUserRepository.findByTenantAndUser(
+        tenant.id,
+        this.options.currentUser.id,
+        {
+          ...this.options,
+          transaction,
+        },
+      );
 
     if (!tenantUser || tenantUser.status !== 'invited') {
       return;
@@ -161,9 +164,10 @@ export default class TenantService {
   }
 
   async create(data) {
-    const transaction = await SequelizeRepository.createTransaction(
-      this.options.database,
-    );
+    const transaction =
+      await SequelizeRepository.createTransaction(
+        this.options.database,
+      );
 
     try {
       if (getConfig().TENANT_MODE === 'single') {
@@ -201,26 +205,28 @@ export default class TenantService {
         },
       );
 
-      const tenantUsers = await TenantUserRepository.findByUser(
-        this.options.currentUser.id,
-        {
-          ...this.options,
-          transaction,
-        },
-      );
+      const tenantUsers =
+        await TenantUserRepository.findByUser(
+          this.options.currentUser.id,
+          {
+            ...this.options,
+            transaction,
+          },
+        );
 
       // [Dev]: Setting limit of number of workspace per users.
       // This is done for performance debugging purposes.
 
-      if (tenantUsers.count > 3) {
-        await SequelizeRepository.rollbackTransaction(
-          transaction,
-        );
-      } else {
-        await SequelizeRepository.commitTransaction(
-          transaction,
-        );
-      }
+      // if (tenantUsers.count > 3) {
+      //   await SequelizeRepository.rollbackTransaction(
+      //     transaction,
+      //   );
+      // } else {
+
+      await SequelizeRepository.commitTransaction(
+        transaction,
+      );
+      // }
 
       return record;
     } catch (error) {
@@ -232,9 +238,10 @@ export default class TenantService {
   }
 
   async update(id, data) {
-    const transaction = await SequelizeRepository.createTransaction(
-      this.options.database,
-    );
+    const transaction =
+      await SequelizeRepository.createTransaction(
+        this.options.database,
+      );
 
     try {
       let record = await TenantRepository.findById(id, {
@@ -272,9 +279,10 @@ export default class TenantService {
     planStripeCustomerId,
     planUserId,
   ) {
-    const transaction = await SequelizeRepository.createTransaction(
-      this.options.database,
-    );
+    const transaction =
+      await SequelizeRepository.createTransaction(
+        this.options.database,
+      );
 
     try {
       await TenantRepository.updatePlanUser(
@@ -313,9 +321,10 @@ export default class TenantService {
     plan,
     planStatus,
   ) {
-    const transaction = await SequelizeRepository.createTransaction(
-      this.options.database,
-    );
+    const transaction =
+      await SequelizeRepository.createTransaction(
+        this.options.database,
+      );
 
     try {
       await TenantRepository.updatePlanStatus(
@@ -341,9 +350,10 @@ export default class TenantService {
   }
 
   async destroyAll(ids) {
-    const transaction = await SequelizeRepository.createTransaction(
-      this.options.database,
-    );
+    const transaction =
+      await SequelizeRepository.createTransaction(
+        this.options.database,
+      );
 
     try {
       for (const id of ids) {
@@ -425,18 +435,20 @@ export default class TenantService {
     token,
     forceAcceptOtherEmail = false,
   ) {
-    const transaction = await SequelizeRepository.createTransaction(
-      this.options.database,
-    );
+    const transaction =
+      await SequelizeRepository.createTransaction(
+        this.options.database,
+      );
 
     try {
-      const tenantUser = await TenantUserRepository.findByInvitationToken(
-        token,
-        {
-          ...this.options,
-          transaction,
-        },
-      );
+      const tenantUser =
+        await TenantUserRepository.findByInvitationToken(
+          token,
+          {
+            ...this.options,
+            transaction,
+          },
+        );
 
       if (!tenantUser || tenantUser.status !== 'invited') {
         throw new Error404();
@@ -475,18 +487,20 @@ export default class TenantService {
   }
 
   async declineInvitation(token) {
-    const transaction = await SequelizeRepository.createTransaction(
-      this.options.database,
-    );
+    const transaction =
+      await SequelizeRepository.createTransaction(
+        this.options.database,
+      );
 
     try {
-      const tenantUser = await TenantUserRepository.findByInvitationToken(
-        token,
-        {
-          ...this.options,
-          transaction,
-        },
-      );
+      const tenantUser =
+        await TenantUserRepository.findByInvitationToken(
+          token,
+          {
+            ...this.options,
+            transaction,
+          },
+        );
 
       if (!tenantUser || tenantUser.status !== 'invited') {
         throw new Error404();

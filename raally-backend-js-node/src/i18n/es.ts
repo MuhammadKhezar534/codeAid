@@ -75,7 +75,8 @@ const es = {
       message: 'Prohibido',
     },
     validation: {
-      message: 'Ocurrió un error',
+      message:
+        'Lo sentimos, no reconocemos tus credenciales',
     },
   },
   email: {
@@ -90,41 +91,35 @@ const es = {
   entities: {
     compensation: {
       errors: {
-        unique: {
-
-        }
-      }
+        unique: {},
+      },
     },
     person: {
       errors: {
         unique: {
           fullName: 'Full Name debe ser único',
-        }
-      }
+        },
+      },
     },
     jobTitle: {
       errors: {
-        unique: {
-
-        }
-      }
+        unique: {},
+      },
     },
     project: {
       errors: {
         unique: {
           projectId: 'Project ID debe ser único',
           name: 'Name debe ser único',
-        }
-      }
+        },
+      },
     },
     assignment: {
       errors: {
-        unique: {
-
-        }
-      }
+        unique: {},
+      },
     },
-  }
+  },
 };
 
 export default es;

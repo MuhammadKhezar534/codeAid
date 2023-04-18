@@ -13,13 +13,17 @@ export default class DashboardService {
   async getUsageByHoursData() {
     const totalElapsedTime = this.timeToGather;
     const startTime = process.hrtime();
-    
-    const responseData = await SequelizeRepository.getUsageByHoursData(this.options);
-    
+
+    const responseData =
+      await SequelizeRepository.getUsageByHoursData(
+        this.options,
+      );
+
     const stopTime = process.hrtime(startTime);
-    const elapsedTime = stopTime[0] * 1000 + stopTime[1] / 1000000;
+    const elapsedTime =
+      stopTime[0] * 1000 + stopTime[1] / 1000000;
     this.timeToGather = totalElapsedTime + elapsedTime;
-    
+
     return responseData;
   }
 
@@ -27,12 +31,16 @@ export default class DashboardService {
     const totalElapsedTime = this.timeToGather;
     const startTime = process.hrtime();
 
-    const responseData = await SequelizeRepository.getNumberOfPeoplePerRole(this.options);
-    
+    const responseData =
+      await SequelizeRepository.getNumberOfPeoplePerRole(
+        this.options,
+      );
+
     const stopTime = process.hrtime(startTime);
-    const elapsedTime = stopTime[0] * 1000 + stopTime[1] / 1000000
+    const elapsedTime =
+      stopTime[0] * 1000 + stopTime[1] / 1000000;
     this.timeToGather = totalElapsedTime + elapsedTime;
-    
+
     return responseData;
   }
 
@@ -40,10 +48,14 @@ export default class DashboardService {
     const totalElapsedTime = this.timeToGather;
     const startTime = process.hrtime();
 
-    const responseData = await SequelizeRepository.getUsageByPeopleData(this.options);
-    
+    const responseData =
+      await SequelizeRepository.getUsageByPeopleData(
+        this.options,
+      );
+
     const stopTime = process.hrtime(startTime);
-    const elapsedTime = stopTime[0] * 1000 + stopTime[1] / 1000000
+    const elapsedTime =
+      stopTime[0] * 1000 + stopTime[1] / 1000000;
     this.timeToGather = totalElapsedTime + elapsedTime;
 
     return responseData;
@@ -53,12 +65,16 @@ export default class DashboardService {
     const totalElapsedTime = this.timeToGather;
     const startTime = process.hrtime();
 
-    const responseData = await SequelizeRepository.getIdlenessPerRoleData(this.options);
-    
+    const responseData =
+      await SequelizeRepository.getIdlenessPerRoleData(
+        this.options,
+      );
+
     const stopTime = process.hrtime(startTime);
-    const elapsedTime = stopTime[0] * 1000 + stopTime[1] / 1000000
+    const elapsedTime =
+      stopTime[0] * 1000 + stopTime[1] / 1000000;
     this.timeToGather = totalElapsedTime + elapsedTime;
-    
+
     return responseData;
   }
 

@@ -7,7 +7,7 @@ const en = {
     title: 'Application',
   },
 
-  auth: {  
+  auth: {
     wrongPassword: `Sorry, we don't recognize your credentials`,
     weakPassword: 'This password is too weak',
     emailAlreadyInUse: 'Email is already in use',
@@ -73,7 +73,7 @@ const en = {
       message: 'Forbidden',
     },
     validation: {
-      message: 'An error occurred',
+      message: `Sorry, we don't recognize your credentials`,
     },
   },
 
@@ -89,41 +89,35 @@ const en = {
   entities: {
     compensation: {
       errors: {
-        unique: {
-
-        }
-      }
+        unique: {},
+      },
     },
     person: {
       errors: {
         unique: {
           fullName: 'Full Name must be unique',
-        }
-      }
+        },
+      },
     },
     jobTitle: {
       errors: {
-        unique: {
-
-        }
-      }
+        unique: {},
+      },
     },
     project: {
       errors: {
         unique: {
           projectId: 'Project ID must be unique',
           name: 'Name must be unique',
-        }
-      }
+        },
+      },
     },
     assignment: {
       errors: {
-        unique: {
-
-        }
-      }
+        unique: {},
+      },
     },
-  }
+  },
 };
 
 export default en;

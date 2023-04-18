@@ -35,335 +35,333 @@ const en = {
 
   entities: {
     compensation: {
-        name: 'compensation',
-        label: 'Compensations',
+      name: 'compensation',
+      label: 'Compensations',
+      menu: 'Compensations',
+      exporterFileName: 'compensation_export',
+      list: {
         menu: 'Compensations',
-        exporterFileName: 'compensation_export',
-        list: {
-          menu: 'Compensations',
-          title: 'Compensations',
-        },
-        create: {
-          success: 'Compensation successfully saved',
-        },
-        update: {
-          success: 'Compensation successfully saved',
-        },
-        destroy: {
-          success: 'Compensation successfully deleted',
-        },
-        destroyAll: {
-          success: 'Compensation(s) successfully deleted',
-        },
-        edit: {
-          title: 'Edit Compensation',
-        },
-        fields: {
-          id: 'Id',
-          'person': 'Person',
-          'type': 'Type',
-          'workAvailabilityRange': 'Work Availability',
-          'workAvailability': 'Work Availability',
-          'monetaryRange': 'Monetary',
-          'monetary': 'Monetary',
-          'paidTimeOffRange': 'Paid Time Off',
-          'paidTimeOff': 'Paid Time Off',
-          'otherBenefits': 'Other Benefits',
-          'effectiveDateRange': 'Effective Date',
-          'effectiveDate': 'Effective Date',
-          createdAt: 'Created at',
-          updatedAt: 'Updated at',
-          createdAtRange: 'Created at',
-        },
-        enumerators: {
-          'type': {
-            'hourly': 'Hourly',
-            'salaried': 'Salaried',
-          },
-        },
-        placeholders: {
-          'type': 'Hourly/Salaried',
-          'workAvailability': '40',
-          'monetary': '00.00',
-          'paidTimeOff': '0',
-        },
-        hints: {
-          'type': 'Compensation type (hourly or salaried)',
-          'workAvailability': 'How much availaibility does this compensation cover in hours per week.',
-          'monetary': 'Person\'s monetary compensation',
-          'paidTimeOff': 'The emount of paid time off that is part of the compensation',
-          'otherBenefits': 'Which other benefits does compensation cover.',
-          'effectiveDate': 'The day the compensation starts being effective',
-        },
-        new: {
-          title: 'New Compensation',
-        },
-        view: {
-          title: 'View Compensation',
-        },
-        importer: {
-          title: 'Import Compensations',
-          fileName: 'compensation_import_template',
-          hint:
-            'Files/Images columns must be the URLs of the files separated by space.',
+        title: 'Compensations',
+      },
+      create: {
+        success: 'Compensation successfully saved',
+      },
+      update: {
+        success: 'Compensation successfully saved',
+      },
+      destroy: {
+        success: 'Compensation successfully deleted',
+      },
+      destroyAll: {
+        success: 'Compensation(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Compensation',
+      },
+      fields: {
+        id: 'Id',
+        person: 'Person',
+        type: 'Type',
+        workAvailabilityRange: 'Work Availability',
+        workAvailability: 'Work Availability',
+        monetaryRange: 'Monetary',
+        monetary: 'Monetary',
+        paidTimeOffRange: 'Paid Time Off',
+        paidTimeOff: 'Paid Time Off',
+        otherBenefits: 'Other Benefits',
+        effectiveDateRange: 'Effective Date',
+        effectiveDate: 'Effective Date',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        type: {
+          hourly: 'Hourly',
+          salaried: 'Salaried',
         },
       },
+      placeholders: {
+        type: 'Hourly/Salaried',
+        workAvailability: '40',
+        monetary: '00.00',
+        paidTimeOff: '0',
+      },
+      hints: {
+        type: 'Compensation type (hourly or salaried)',
+        workAvailability:
+          'How much availaibility does this compensation cover in hours per week.',
+        monetary: "Person's monetary compensation",
+        paidTimeOff:
+          'The emount of paid time off that is part of the compensation',
+        otherBenefits:
+          'Which other benefits does compensation cover.',
+        effectiveDate:
+          'The day the compensation starts being effective',
+      },
+      new: {
+        title: 'New Compensation',
+      },
+      view: {
+        title: 'View Compensation',
+      },
+      importer: {
+        title: 'Import Compensations',
+        fileName: 'compensation_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
 
     person: {
-        name: 'person',
-        label: 'People',
+      name: 'person',
+      label: 'People',
+      menu: 'People',
+      exporterFileName: 'person_export',
+      list: {
         menu: 'People',
-        exporterFileName: 'person_export',
-        list: {
-          menu: 'People',
-          title: 'People',
-        },
-        create: {
-          success: 'Person successfully saved',
-        },
-        update: {
-          success: 'Person successfully saved',
-        },
-        destroy: {
-          success: 'Person successfully deleted',
-        },
-        destroyAll: {
-          success: 'Person(s) successfully deleted',
-        },
-        edit: {
-          title: 'Edit Person',
-        },
-        fields: {
-          id: 'Id',
-          'fullName': 'Full Name',
-          createdAt: 'Created at',
-          updatedAt: 'Updated at',
-          createdAtRange: 'Created at',
-        },
-        enumerators: {
-
-        },
-        placeholders: {
-          'fullName': 'Full name...',
-        },
-        hints: {
-          'fullName': 'Person\'s full name.',
-        },
-        new: {
-          title: 'New Person',
-        },
-        view: {
-          title: 'View Person',
-        },
-        importer: {
-          title: 'Import People',
-          fileName: 'person_import_template',
-          hint:
-            'Files/Images columns must be the URLs of the files separated by space.',
-        },
+        title: 'People',
       },
+      create: {
+        success: 'Person successfully saved',
+      },
+      update: {
+        success: 'Person successfully saved',
+      },
+      destroy: {
+        success: 'Person successfully deleted',
+      },
+      destroyAll: {
+        success: 'Person(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Person',
+      },
+      fields: {
+        id: 'Id',
+        fullName: 'Full Name',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {},
+      placeholders: {
+        fullName: 'Full name...',
+      },
+      hints: {
+        fullName: "Person's full name.",
+      },
+      new: {
+        title: 'New Person',
+      },
+      view: {
+        title: 'View Person',
+      },
+      importer: {
+        title: 'Import People',
+        fileName: 'person_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
 
     jobTitle: {
-        name: 'jobTitle',
-        label: 'Job Titles',
+      name: 'jobTitle',
+      label: 'Job Titles',
+      menu: 'Job Titles',
+      exporterFileName: 'jobTitle_export',
+      list: {
         menu: 'Job Titles',
-        exporterFileName: 'jobTitle_export',
-        list: {
-          menu: 'Job Titles',
-          title: 'Job Titles',
-        },
-        create: {
-          success: 'Job Title successfully saved',
-        },
-        update: {
-          success: 'Job Title successfully saved',
-        },
-        destroy: {
-          success: 'Job Title successfully deleted',
-        },
-        destroyAll: {
-          success: 'Job Title(s) successfully deleted',
-        },
-        edit: {
-          title: 'Edit Job Title',
-        },
-        fields: {
-          id: 'Id',
-          'person': 'Person',
-          'title': 'Title',
-          'effectiveDateRange': 'Effective Date',
-          'effectiveDate': 'Effective Date',
-          createdAt: 'Created at',
-          updatedAt: 'Updated at',
-          createdAtRange: 'Created at',
-        },
-        enumerators: {
-
-        },
-        placeholders: {
-
-        },
-        hints: {
-          'title': 'Job title of a person',
-          'effectiveDate': 'The date the title becomes active.',
-        },
-        new: {
-          title: 'New Job Title',
-        },
-        view: {
-          title: 'View Job Title',
-        },
-        importer: {
-          title: 'Import Job Titles',
-          fileName: 'jobTitle_import_template',
-          hint:
-            'Files/Images columns must be the URLs of the files separated by space.',
-        },
+        title: 'Job Titles',
       },
+      create: {
+        success: 'Job Title successfully saved',
+      },
+      update: {
+        success: 'Job Title successfully saved',
+      },
+      destroy: {
+        success: 'Job Title successfully deleted',
+      },
+      destroyAll: {
+        success: 'Job Title(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Job Title',
+      },
+      fields: {
+        id: 'Id',
+        person: 'Person',
+        title: 'Title',
+        effectiveDateRange: 'Effective Date',
+        effectiveDate: 'Effective Date',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {},
+      placeholders: {},
+      hints: {
+        title: 'Job title of a person',
+        effectiveDate: 'The date the title becomes active.',
+      },
+      new: {
+        title: 'New Job Title',
+      },
+      view: {
+        title: 'View Job Title',
+      },
+      importer: {
+        title: 'Import Job Titles',
+        fileName: 'jobTitle_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
 
     project: {
-        name: 'project',
-        label: 'Projects',
+      name: 'project',
+      label: 'Projects',
+      menu: 'Projects',
+      exporterFileName: 'project_export',
+      list: {
         menu: 'Projects',
-        exporterFileName: 'project_export',
-        list: {
-          menu: 'Projects',
-          title: 'Projects',
-        },
-        create: {
-          success: 'Project successfully saved',
-        },
-        update: {
-          success: 'Project successfully saved',
-        },
-        destroy: {
-          success: 'Project successfully deleted',
-        },
-        destroyAll: {
-          success: 'Project(s) successfully deleted',
-        },
-        edit: {
-          title: 'Edit Project',
-        },
-        fields: {
-          id: 'Id',
-          'projectId': 'Project ID',
-          'name': 'Name',
-          'type': 'Type',
-          'teamMembers': 'Team Members',
-          createdAt: 'Created at',
-          updatedAt: 'Updated at',
-          createdAtRange: 'Created at',
-        },
-        enumerators: {
-          'type': {
-            'managed-project': 'Managed-project',
-            'non-managed-project': 'Non-managed-project',
-            'team-augmentation': 'Team-augmentation',
-          },
-        },
-        placeholders: {
-          'projectId': 'Project Internal ID',
-          'name': 'Project Name',
-          'type': 'Project Type',
-        },
-        hints: {
-          'projectId': 'The internal company-wide ID of the project.',
-          'name': 'The name of the project.',
-          'type': 'The type of the poject.',
-        },
-        new: {
-          title: 'New Project',
-        },
-        view: {
-          title: 'View Project',
-        },
-        importer: {
-          title: 'Import Projects',
-          fileName: 'project_import_template',
-          hint:
-            'Files/Images columns must be the URLs of the files separated by space.',
+        title: 'Projects',
+      },
+      create: {
+        success: 'Project successfully saved',
+      },
+      update: {
+        success: 'Project successfully saved',
+      },
+      destroy: {
+        success: 'Project successfully deleted',
+      },
+      destroyAll: {
+        success: 'Project(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Project',
+      },
+      fields: {
+        id: 'Id',
+        projectId: 'Project ID',
+        name: 'Name',
+        type: 'Type',
+        teamMembers: 'Team Members',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        type: {
+          'managed-project': 'Managed-project',
+          'non-managed-project': 'Non-managed-project',
+          'team-augmentation': 'Team-augmentation',
         },
       },
+      placeholders: {
+        projectId: 'Project Internal ID',
+        name: 'Project Name',
+        type: 'Project Type',
+      },
+      hints: {
+        projectId:
+          'The internal company-wide ID of the project.',
+        name: 'The name of the project.',
+        type: 'The type of the project.',
+      },
+      new: {
+        title: 'New Project',
+      },
+      view: {
+        title: 'View Project',
+      },
+      importer: {
+        title: 'Import Projects',
+        fileName: 'project_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
 
     assignment: {
-        name: 'assignment',
-        label: 'Assignments',
+      name: 'assignment',
+      label: 'Assignments',
+      menu: 'Assignments',
+      exporterFileName: 'assignment_export',
+      list: {
         menu: 'Assignments',
-        exporterFileName: 'assignment_export',
-        list: {
-          menu: 'Assignments',
-          title: 'Assignments',
-        },
-        create: {
-          success: 'Assignment successfully saved',
-        },
-        update: {
-          success: 'Assignment successfully saved',
-        },
-        destroy: {
-          success: 'Assignment successfully deleted',
-        },
-        destroyAll: {
-          success: 'Assignment(s) successfully deleted',
-        },
-        edit: {
-          title: 'Edit Assignment',
-        },
-        fields: {
-          id: 'Id',
-          'person': 'Person',
-          'project': 'Project',
-          'hoursPerWeekRange': 'Hours Per Week',
-          'hoursPerWeek': 'Hours Per Week',
-          'startDateRange': 'Start Date',
-          'startDate': 'Start Date',
-          'endDateRange': 'End Date',
-          'endDate': 'End Date',
-          'role': 'Role',
-          'notes': 'Notes',
-          createdAt: 'Created at',
-          updatedAt: 'Updated at',
-          createdAtRange: 'Created at',
-        },
-        enumerators: {
-          'role': {
-            'project-manager': 'Project-manager',
-            'technical-team-lead': 'Technical-team-lead',
-            'lead-developer': 'Lead-developer',
-            'developer': 'Developer',
-            'qa': 'Qa',
-            'designer': 'Designer',
-          },
-        },
-        placeholders: {
-          'person': 'Person to assign...',
-          'project': 'Project ID',
-          'hoursPerWeek': 'Hours per week',
-          'notes': 'Additional notes...',
-        },
-        hints: {
-          'person': 'Pick a person to create new assignment.',
-          'project': 'Project to be assigned to.',
-          'hoursPerWeek': 'How many hours per week is this assignment for.',
-          'startDate': 'The effective start date of the assignment.',
-          'endDate': 'The date when the assignment was finished.',
-          'role': 'What is the role of the person being assigned.',
-          'notes': 'Any notes worth mentioining regarding this assignment.',
-        },
-        new: {
-          title: 'New Assignment',
-        },
-        view: {
-          title: 'View Assignment',
-        },
-        importer: {
-          title: 'Import Assignments',
-          fileName: 'assignment_import_template',
-          hint:
-            'Files/Images columns must be the URLs of the files separated by space.',
+        title: 'Assignments',
+      },
+      create: {
+        success: 'Assignment successfully saved',
+      },
+      update: {
+        success: 'Assignment successfully saved',
+      },
+      destroy: {
+        success: 'Assignment successfully deleted',
+      },
+      destroyAll: {
+        success: 'Assignment(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Assignment',
+      },
+      fields: {
+        id: 'Id',
+        person: 'Person',
+        project: 'Project',
+        hoursPerWeekRange: 'Hours Per Week',
+        hoursPerWeek: 'Hours Per Week',
+        startDateRange: 'Start Date',
+        startDate: 'Start Date',
+        endDateRange: 'End Date',
+        endDate: 'End Date',
+        role: 'Role',
+        notes: 'Notes',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        role: {
+          'project-manager': 'Project-manager',
+          'technical-team-lead': 'Technical-team-lead',
+          'lead-developer': 'Lead-developer',
+          developer: 'Developer',
+          qa: 'Qa',
+          designer: 'Designer',
         },
       },
+      placeholders: {
+        person: 'Person to assign...',
+        project: 'Project ID',
+        hoursPerWeek: 'Hours per week',
+        notes: 'Additional notes...',
+      },
+      hints: {
+        person: 'Pick a person to create new assignment.',
+        project: 'Project to be assigned to.',
+        hoursPerWeek:
+          'How many hours per week is this assignment for.',
+        startDate:
+          'The effective start date of the assignment.',
+        endDate:
+          'The date when the assignment was finished.',
+        role: 'What is the role of the person being assigned.',
+        notes:
+          'Any notes worth mentioining regarding this assignment.',
+      },
+      new: {
+        title: 'New Assignment',
+      },
+      view: {
+        title: 'View Assignment',
+      },
+      importer: {
+        title: 'Import Assignments',
+        fileName: 'assignment_import_template',
+        hint: 'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
   },
 
   auth: {
@@ -489,8 +487,7 @@ const en = {
     importer: {
       title: 'Import Users',
       fileName: 'users_import_template',
-      hint:
-        'Files/Images columns must be the URLs of the files separated by space. Relationships must be the ID of the referenced records separated by space. Roles must be the role ids separated by space.',
+      hint: 'Files/Images columns must be the URLs of the files separated by space. Relationships must be the ID of the referenced records separated by space. Roles must be the role ids separated by space.',
     },
     errors: {
       userAlreadyExists:
@@ -547,8 +544,7 @@ const en = {
     },
     select: 'Select Workspace',
     validation: {
-      url:
-        'Your workspace URL can only contain lowercase letters, numbers and dashes (and must start with a letter or number).',
+      url: 'Your workspace URL can only contain lowercase letters, numbers and dashes (and must start with a letter or number).',
     },
   },
 
@@ -606,7 +602,8 @@ const en = {
         'Settings successfully saved. The page will reload in {0} seconds for changes to take effect.',
     },
     fields: {
-      theme: 'Theme'
+      theme: 'Theme',
+      backgroundImages: 'Background Image',
     },
     colors: {
       default: 'Dark',
@@ -683,7 +680,7 @@ const en = {
     error:
       'Sorry, this operation is not allowed in preview mode.',
   },
-  
+
   // See https://github.com/jquense/yup#using-a-custom-locale-dictionary
   /* eslint-disable */
   validation: {
@@ -713,8 +710,7 @@ const en = {
       selected: '${path} must be selected',
     },
     number: {
-      min:
-        '${path} must be greater than or equal to ${min}',
+      min: '${path} must be greater than or equal to ${min}',
       max: '${path} must be less than or equal to ${max}',
       lessThan: '${path} must be less than ${less}',
       moreThan: '${path} must be greater than ${more}',
@@ -737,8 +733,7 @@ const en = {
         min === 1
           ? `${path} is required`
           : `${path} field must have at least ${min} items`,
-      max:
-        '${path} field must have less than or equal to ${max} items',
+      max: '${path} field must have less than or equal to ${max} items',
     },
   },
   /* eslint-disable */
@@ -767,8 +762,7 @@ const en = {
     },
     form: {
       downloadTemplate: 'Download the template',
-      hint:
-        'Click or drag the file to this area to continue',
+      hint: 'Click or drag the file to this area to continue',
     },
     list: {
       discardConfirm:

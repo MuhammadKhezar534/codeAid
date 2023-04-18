@@ -9,12 +9,13 @@ export default async (req, res, next) => {
       Permissions.values.compensationCreate,
     );
 
-    const payload = await new CompensationService(req).create(
-      req.body.data,
-    );
+    const payload = await new CompensationService(
+      req,
+    ).create(req.body.data);
 
     await ApiResponseHandler.success(req, res, payload);
   } catch (error) {
+    console.log({ error });
     await ApiResponseHandler.error(req, res, error);
   }
 };
